@@ -22,5 +22,17 @@ An seeing song thing 2
   select when echo message input "(.*)" msg_type "song" setting(m) 
   send_directive("sing") with
     song  =  m;
-}
+  fired {
+  raise explicit event "sung" with
+    song  =  m;}
+ } 
+
+ rule find_hymn is active {
+  select when explicit sung song "(.*)" setting (m)
+  send_directive("sing") with
+    song  =  m;
+  fired {
+  raise explicit event "found_hymn"
+  if (m eq #"*god*"#i)}
+ }
 }
