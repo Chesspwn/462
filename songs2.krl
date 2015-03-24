@@ -33,7 +33,7 @@ An seeing song thing 2
     song  =  m;
   fired {
   raise explicit event "found_hymn" with song = m
-  if (m eq re#*god*#i)}
+  if (m == re#*god*#i)}
  }
 
 rule celebrate is active {
