@@ -23,5 +23,9 @@ A first ruleset for the Quickstart
     send_directive("say") with
       something = "Hello World";
   }
- 
+ rule echo is active {
+  select when echo message input "(.*)" setting(m)
+  send_directive("say") with
+    something = m;
+}
 }
