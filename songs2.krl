@@ -37,7 +37,7 @@ An seeing song thing 2
  }
 
 rule celebrate is active {
- select when explicit fount_hymn song "(.*)" setting (m)
+ select when explicit found_hymn song "(.*)" setting (m)
   send_directive("celebrate ") with
     reason =  m;
 }
