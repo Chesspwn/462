@@ -32,7 +32,13 @@ An seeing song thing 2
   send_directive("sing") with
     song  =  m;
   fired {
-  raise explicit event "found_hymn"
+  raise explicit event "found_hymn" with song = m
   if (m eq #"*god*"#i)}
  }
+
+rule celebrate is active {
+ select when explicit fount_hymn song "(.*)" setting (m)
+  send_directive("celebrate ") with
+    reason =  m;
+}
 }
