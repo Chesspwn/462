@@ -17,8 +17,9 @@ An seeing song thing 2
     };
  
   }
+
  rule songs is active {
-  select when echo message input "(.*)" setting(m) and msg_type = song
+  select when echo message input "(.*)" msg_type "song" setting(m) 
   send_directive("sing") with
     song  =  m;
 }
