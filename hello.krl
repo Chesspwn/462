@@ -1,15 +1,9 @@
 
-ruleset hello_world {
+ruleset echo {
   meta {
-    name "Hello World 2"
+    name "My Echo"
     description <<
-A first ruleset for the Quickstart
->>
-    author "Phil Windley"
-    logging on
-    sharing on
-    provides hello
- 
+An echo thing
   }
   global {
     hello = function(obj) {
