@@ -19,7 +19,7 @@ An seeing song thing
   }
  rule songs is active {
   select when echo message input "(.*)" setting(m)
-  send_directive("say") with
-    something = "You said to say: " + m;
+  send_directive("sing") with
+    song  =  m;
 }
 }
