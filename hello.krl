@@ -4,6 +4,12 @@ ruleset echo {
     name "My Echo"
     description <<
 An echo thing
+>>
+    author "Thomas Hutchins"
+    logging on
+    sharing on
+    provides hello
+ 
   }
   global {
     hello = function(obj) {
