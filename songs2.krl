@@ -1,6 +1,6 @@
 ruleset see_songs {
   meta {
-    name "My see songs"
+    name "My see songs 2"
     description <<
 An seeing song thing
 >>
