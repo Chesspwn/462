@@ -36,9 +36,4 @@ An seeing song thing 2
   if (m == re#*god*#i)}
  }
 
-rule celebrate is active {
- select when explicit found_hymn song "(.*)" setting (m)
-  send_directive("celebrate ") with
-    reason =  m;
-}
 }
