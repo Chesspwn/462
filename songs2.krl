@@ -2,7 +2,7 @@ ruleset see_songs {
   meta {
     name "My see songs 2"
     description <<
-An seeing song thing
+An seeing song thing 2
 >>
     author "Thomas Hutchins"
     logging on
