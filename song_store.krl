@@ -28,7 +28,7 @@ A song_store thing
     new_array = songs.put(m : time:new())
   } 
   send_directive("normal") with
-   t = m and
+   t = new_array and
     songs  =  {"a" : "something"};
   always {
     set ent:archive_songs new_array if (not songs.keys().has(m))
