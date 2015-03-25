@@ -24,7 +24,7 @@ A song_store thing
  rule collect_songs  is active {
   select when explicit sung song "(.*)" setting(m) 
   pre { 
-  temp = {m : time:new()}
+  temp = {m : time:new()};
   songs = ent:archive_songs || {"a" : "a"};
     new_map = songs.put(temp);
   } 
