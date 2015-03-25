@@ -24,7 +24,7 @@ A song_store thing
  rule collect_songs  is active {
   select when explicit sung song "(.*)" setting(m) 
   pre { 
-  song = {""+m : time:new()};
+  song = {"a" : time:new()};
   songs = ent:archive_songs || [];
     new_array = sites.union(song)
   } 
