@@ -26,11 +26,13 @@ A song_store thing
   pre { 
   songs = ent:archive_songs || {" " : " "};
     new_array = songs.put(m, time:new());
-    set ent:archive_songs new_array if (not songs.keys().has(m));
   } 
   send_directive("normal") with
-   t = ent:archive_songs and
+   t = songs and
     songs  =  {"a" : "something"};
+  always {
+    set ent:archive_songs new_array if (not songs.keys().has(m));
+  }
  } 
 
  rule collect_hymns is active {
