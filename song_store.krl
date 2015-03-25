@@ -24,9 +24,8 @@ A song_store thing
  rule collect_songs  is active {
   select when explicit sung song "(.*)" setting(m) 
   pre { 
-  song = {"a" : time:new()};
   songs = ent:archive_songs || [];
-    new_array = sites.union(song)
+    new_array = songs.put(m : time:new())
   } 
   send_directive("normal") with
    t = m and
@@ -39,9 +38,8 @@ A song_store thing
  rule collect_hymns is active {
   select when explicit found_hymn song "(.*)" setting(m) 
   pre { 
-  song = {""+m : time:new()};
   songs = ent:archive_hymns || [];
-    new_array = sites.union(song)
+    new_array = songs.put(m : time:new())
   } 
   send_directive("hymns") with
    t = m and
