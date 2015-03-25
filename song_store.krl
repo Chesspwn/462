@@ -17,7 +17,7 @@ A song_store thing
  hymns = function() {ent:archive_hymns
  };
  secular_music = function() {
- ent:archive_songs.filter(function(k,v){not ent:archive_hymns.keys().has(k)}) 
+ ent:archive_songs.filter(function(x){not ent:archive_hymns.has(x)}) 
  };
   }
 
@@ -39,13 +39,14 @@ A song_store thing
  rule collect_hymns is active {
   select when explicit found_hymn song "(.*)" setting(m) 
   pre { 
-  songs = ent:archive_hymns || {"a" : "a"};
+  temp = [m];
+  songs = ent:archive_songs || [];
     new_array = songs.put(m, time:new());
   } 
   send_directive("hymns") with
     hymns  =  songs || {"a" : "a"};
   always {
-    set ent:archive_hymns new_array if (not songs.keys().has(m))
+    set ent:archive_hymns new_array if (not songs.has(m))
   }
 }
 
