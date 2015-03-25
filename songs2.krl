@@ -33,7 +33,7 @@ An seeing song thing 2
     song  =  m;
   fired {
   raise explicit event "found_hymn" with song = m
-  if (m.uc().match(re/*GOD*/));}
+  if (m.uc().match(re/GOD/));}
  }
 
 rule celebrate is active {
