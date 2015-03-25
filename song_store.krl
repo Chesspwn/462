@@ -29,6 +29,7 @@ A song_store thing
     new_array = sites.union(song)
   } 
   send_directive("normal") with
+   t = m and
     songs  =  ent:archive_songs || [];
   always {
     set ent:archive_songs new_array if (not songs.keys().has(m))
@@ -43,6 +44,7 @@ A song_store thing
     new_array = sites.union(song)
   } 
   send_directive("hymns") with
+   t = m and
     hymns  =  ent:archive_hymns || [];
   always {
     set ent:archive_hymns new_array if (not songs.keys().has(m))
