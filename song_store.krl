@@ -38,14 +38,14 @@ A song_store thing
  rule collect_hymns is active {
   select when explicit found_hymn song "(.*)" setting(m) 
   pre { 
-  temp = [m];
-  songs = ent:archive_hymns || [];
-    new_map = songs.append(temp);
+  temp2 = [m];
+  songs2 = ent:archive_hymns || [];
+    new_map2 = songs2.append(temp2);
   } 
   send_directive("hymns") with
-    hymns  =  new_map;
+    hymns  =  new_map2;
   always {
-    set ent:archive_hymns new_map if (not songs.has(m));
+    set ent:archive_hymns new_map2 if (not songs2.has(m));
   }
 }
 
