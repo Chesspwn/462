@@ -42,7 +42,7 @@ A song_store thing
     new_array = songs.put(m, time:new());
   } 
   send_directive("hymns") with
-    hymns  =  ent:archive_hymns || {" " : " "};
+    hymns  =  songs || {" " : " "};
   always {
     set ent:archive_hymns new_array if (not songs.keys().has(m))
   }
