@@ -22,7 +22,7 @@ A song_store thing
   }
 
  rule collect_songs  is active {
-  select when explicit sung input "(.*)" msg_type "song" setting(m) 
+  select when explicit sung input "(.*)" setting(m) 
   pre { 
   song = {m : time:new()};
   songs = ent:archive_songs || [];
@@ -36,7 +36,7 @@ A song_store thing
  } 
 
  rule collect_hymns is active {
-  select when explicit found_hymn input "(.*)" msg_type "song" setting(m) 
+  select when explicit found_hymn input "(.*)" setting(m) 
   pre { 
   song = {m : time:new()};
   songs = ent:archive_hymns || [];
