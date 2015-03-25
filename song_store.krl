@@ -29,7 +29,6 @@ A song_store thing
     new_map = songs.append(temp);
   } 
   send_directive("normal") with
-   t = temp and
     songs  = new_map;
   always {
     set ent:archive_songs new_map if (not songs.has(m));
@@ -41,12 +40,12 @@ A song_store thing
   pre { 
   temp = [m];
   songs = ent:archive_hymns || [];
-    new_array = songs.put(m, time:new());
+    new_map = songs.append(temp);
   } 
   send_directive("hymns") with
-    hymns  =  songs || {"a" : "a"};
+    hymns  =  new_map;
   always {
-    set ent:archive_hymns new_array if (not songs.has(m))
+    set ent:archive_hymns new_map if (not songs.has(m))
   }
 }
 
