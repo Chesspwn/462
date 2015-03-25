@@ -30,7 +30,7 @@ A song_store thing
   } 
   send_directive("normal") with
    t = m and
-    songs  =  new_array || [];
+    songs  =  {"a" : "something"};
   always {
     set ent:archive_songs new_array if (not songs.keys().has(m))
   }
