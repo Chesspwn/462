@@ -24,14 +24,15 @@ A song_store thing
  rule collect_songs  is active {
   select when explicit sung song "(.*)" setting(m) 
   pre { 
+  temp = {m : time:new()}
   songs = ent:archive_songs || {"a" : "a"};
-    new_array = songs.put(m, time:new());
+    new_map = songs.put(temp);
   } 
   send_directive("normal") with
-   t = songs and
+   t = temp and
     songs  =  {"a" : "something"};
   always {
-    set ent:archive_songs new_array if (not songs.keys().has(m));
+    set ent:archive_songs new_map if (not songs.keys().has(m));
   }
  } 
 
