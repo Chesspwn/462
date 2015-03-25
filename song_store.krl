@@ -24,7 +24,7 @@ A song_store thing
  rule collect_songs  is active {
   select when explicit sung song "(.*)" setting(m) 
   pre { 
-  songs = ent:archive_songs || {" " : " "};
+  songs = ent:archive_songs || {"a" : "a"};
     new_array = songs.put(m, time:new());
   } 
   send_directive("normal") with
@@ -38,11 +38,11 @@ A song_store thing
  rule collect_hymns is active {
   select when explicit found_hymn song "(.*)" setting(m) 
   pre { 
-  songs = ent:archive_hymns || {" " : " "};
+  songs = ent:archive_hymns || {"a" : "a"};
     new_array = songs.put(m, time:new());
   } 
   send_directive("hymns") with
-    hymns  =  songs || {" " : " "};
+    hymns  =  songs || {"a" : "a"};
   always {
     set ent:archive_hymns new_array if (not songs.keys().has(m))
   }
