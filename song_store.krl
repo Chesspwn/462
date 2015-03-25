@@ -45,7 +45,7 @@ A song_store thing
   send_directive("hymns") with
     hymns  =  new_map;
   always {
-    set ent:archive_hymns new_map if (not songs.has(m))
+    set ent:archive_hymns new_map if (not songs.has(m));
   }
 }
 
