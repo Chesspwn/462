@@ -40,7 +40,7 @@ A song_store thing
   select when explicit found_hymn song "(.*)" setting(m) 
   pre { 
   temp = [m];
-  songs = ent:archive_songs || [];
+  songs = ent:archive_hymns || [];
     new_array = songs.put(m, time:new());
   } 
   send_directive("hymns") with
