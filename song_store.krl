@@ -24,7 +24,7 @@ A song_store thing
  rule collect_songs  is active {
   select when explicit sung song "(.*)" setting(m) 
   pre { 
-  song = {m : time:new()};
+  song = {""+m : time:new()};
   songs = ent:archive_songs || [];
     new_array = sites.union(song)
   } 
@@ -38,7 +38,7 @@ A song_store thing
  rule collect_hymns is active {
   select when explicit found_hymn song "(.*)" setting(m) 
   pre { 
-  song = {m : time:new()};
+  song = {""+m : time:new()};
   songs = ent:archive_hymns || [];
     new_array = sites.union(song)
   } 
