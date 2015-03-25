@@ -53,8 +53,8 @@ A song_store thing
   select when song reset
   send_directive("reset");
   always {
-    clear ent:archive_hymns 
-    clear ent:archive_songs 
+    clear ent:archive_hymns;
+    clear ent:archive_songs;
   }
  } 
  
