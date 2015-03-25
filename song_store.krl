@@ -25,7 +25,7 @@ A song_store thing
   select when explicit sung song "(.*)" setting(m) 
   pre { 
   songs = ent:archive_songs || [];
-    new_array = songs.put(m, time:new())
+    new_array = songs.put(m, time:new());
   } 
   send_directive("normal") with
    t = new_array and
@@ -39,7 +39,7 @@ A song_store thing
   select when explicit found_hymn song "(.*)" setting(m) 
   pre { 
   songs = ent:archive_hymns || [];
-    new_array = songs.put(m, time:new())
+    new_array = songs.put(m, time:new());
   } 
   send_directive("hymns") with
    t = m and
